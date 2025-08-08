@@ -6,7 +6,7 @@ A simple and responsive recipe search web application built using **HTML**, **CS
 
 ## 📸 Preview
 
-![Recipe App Screenshot](./screenshot.png)
+![Recipe App Screenshot](/Screenshot.png)
 
 ---
 
