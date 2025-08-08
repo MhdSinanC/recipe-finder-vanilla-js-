@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Recipe Finder</title>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1 class="header-title">Recipe Finder</h1>
+
+        <!-- Search Form -->
+        <form id="searchBox">
+            <input type="text" class="recipeInput" placeholder="Search Your Recipe" required>
+            <button type="submit" class="inputBtn">Get Recipe</button>
+        </form>
+    </header>
+
+    <!-- Loader Message Area -->
+    <div class="loaderDisplay">
+        <p class="loader-text"></p>
+    </div>
+
+    <!-- Recipes Grid -->
+    <main class="recipes-container container">
+        <!-- Recipe cards will be injected here -->
+    </main>
+
+    <!-- Popup Overlay for recipe details -->
+    <div class="popup-overlay hidden">
+        <div class="recipe-popup">
+            <!-- Close button -->
+            <button class="popup-close-btn" aria-label="Close popup">+</button>
+            <div class="scroll-content">
+
+                <h3 class="popup-recipe-title"></h3>
+                <h4 class="popup-subtitles">Ingredients</h4>
+                <table class="popup-ingredients">
+
+                </table>
+                <h4 class="popup-subtitles">Instructions</h4>
+                <p class="popup-instructions"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Axios CDN + JS script -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+/* Root variables for reusability */
+:root {
+    --dark-green: rgb(67, 141, 49);
+    --light-green: rgb(92, 194, 67);
+    --shadow-color: rgb(0, 0, 0, 0.2);
+    --dark-red: rgb(171, 0, 0);
+}
+
+/* Basic Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(233, 237, 240);
+}
+
+/* Prevent background scroll when popup is open */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Header Section */
+header {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#searchBox {
+    margin-top: 2rem;
+    display: flex;
+    margin: 2rem 0.31rem;
+}
+
+.header-title {
+    font-size: 3rem;
+    letter-spacing: -3px;
+    text-align: center;
+}
+
+/* Search Input */
+.recipeInput {
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.7rem 0 0 0.7rem;
+    border: 1px solid var(--dark-green);
+    border-right: 0;
+    text-align: center;
+    transition: all 0.3s ease-in;
+}
+
+/* Search Button */
+.inputBtn {
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid black;
+    border-radius: 0 0.7rem 0.7rem 0;
+    background-color: var(--light-green);
+    color: white;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.recipeInput:focus-visible {
+    border: 3px solid var(--dark-green);
+    /* border: none; */
+}
+
+.inputBtn:hover {
+    opacity: 0.8;
+}
+
+.inputBtn:active {
+    color: var(--light-green);
+    background-color: white;
+}
+
+/* Loader / Error messages */
+.loaderDisplay {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.loading,
+.error {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    max-width: 90%;
+    width: fit-content;
+    border-radius: 0.6rem;
+}
+
+
+.loading {
+    background-color: rgba(0, 225, 255, 0.265);
+    color: rgb(2, 107, 107);
+    outline: 1px solid rgb(2, 107, 107);
+    
+}
+
+.error {
+    background-color: rgba(255, 0, 0, 0.313);
+    color: var(--dark-red);
+    text-wrap: nowrap;
+    outline: 1px solid var(--dark-red);
+}
+
+/* Container for recipe cards */
+.container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recipes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 268px));
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Individual Recipe Card */
+.recipe-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 10px var(--shadow-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+}
+
+.recipe-img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 0.6rem;
+}
+
+.recipe-title {
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
+}
+
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+/* Popup Overlay and Popup Styles */
+.popup-overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    padding: 1rem 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Hide popup initially */
+.hidden {
+    display: none;
+}
+
+/* Popup Content Box */
+.recipe-popup {
+    display: flex;
+    flex-direction: column;
+    max-width: 17.6rem;
+    background-color: azure;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--shadow-color);
+    position: relative;
+}
+
+/* Scrollable Content */
+.scroll-content {
+    padding: 1.4rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Close Button */
+.popup-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    height: 3rem;
+    font-size: 3rem;
+    color: rgba(107, 106, 106, 0.945);
+    transition: color 0.3s ease;
+    transform: rotate(45deg);
+}
+
+.popup-close-btn:hover {
+    color: rgba(255, 0, 0, 0.521);
+    cursor: pointer;
+}
+
+.popup-close-btn:active {
+    color: black;
+}
+
+/* Popup Content Typography */
+.popup-recipe-title {
+    padding-bottom: 0.3rem;
+}
+
+.popup-subtitles {
+    padding-bottom: 0.3rem;
+    border-bottom: 4px solid var(--dark-green);
+    margin-top: 1rem;
+    margin-bottom: 0.9rem;
+}
+
+/* Ingredient Table */
+table {
+    border-spacing: 0 10px;
+}
+
+table td {
+    padding: 0 3.125rem 0 0;
+}
+
+table tbody tr:not(:last-child) td {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.669);
+}
+
+table tr td {
+    padding-bottom: 0.2rem;
+}
+
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .recipe-popup {
+        max-width: 22rem;
+    }
+}
