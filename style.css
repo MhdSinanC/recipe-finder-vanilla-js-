@@ -186,7 +186,8 @@ header {
 .recipe-popup {
     display: flex;
     flex-direction: column;
-    max-width: 17.6rem;
+    margin: 0 1rem;
+    max-width: 22.3rem;
     background-color: azure;
     border-radius: 0.5rem;
     overflow: hidden;
@@ -251,12 +252,4 @@ table tbody tr:not(:last-child) td {
 
 table tr td {
     padding-bottom: 0.2rem;
-}
-
-
-/* Responsive Design */
-@media (min-width: 768px) {
-    .recipe-popup {
-        max-width: 22rem;
-    }
 }
